@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>IMC</title>
+</head>
+<body>
+    <section>
+        <h1>Calculadora de IMC</h1>
+        <form action="" id="form">
+            <label for="peso">Adicione seu peso</label>
+            <input type="text" placeholder="peso" required id="peso" style="font-size: 20px;">
+            <label for="altura">Adicione sua altura</label>
+            <input type="text" placeholder="altura" required id="altura" style="font-size: 20px;">
+            <button type="submit" id="bnt">Enviar dados</button>
+        </form>
+        <p id="imc"></p>
+        <div id="img"></div>
+        <p id="resposta"></p>
+    </section>
+
+    <script>
+        var formulario = document.getElementById("form")
+        var img = document.getElementById("img")
+        var texto = document.getElementById("imc")
+        
+        formulario.addEventListener('submit', function() {
+            event.preventDefault()
+            var peso = document.getElementById("peso")
+            var valor_p = peso.value
+            var altura = document.getElementById("altura")
+            var valor_a = altura.value
+            var imc = valor_p / (valor_a * valor_a)
+            var resultado = document.getElementById("resposta")
+            if(imc < 18.5){
+                img.innerHTML = '<img src="assets/img/magro.png" />'
+                resultado.innerHTML += "Você está abaixo do peso, com imc:" + imc.toFixed(2)
+            }else if( imc >= 18.5 && imc <= 24.9){
+                texto.innerHTML = "IMC 18.5 - 24.9"
+                img.innerHTML = '<img src="assets/img/ideal.png" />'
+                resultado.innerHTML += "Você está com peso normal, com imc: " + imc.toFixed(2)
+            }else if( imc >=25 && imc <=29.9){
+                texto.innerHTML = "IMC 25 - 29.9"
+                img.innerHTML = '<img src="assets/img/SOBREPESO.png" />'
+                resultado.innerHTML += "Você está com excesso de peso, com imc:" + imc.toFixed(2)
+            }else if( imc >= 30 && imc <= 34.9){
+                texto.innerHTML = "IMC  30 - 34.9"
+                img.innerHTML = '<img src="assets/img/OBESO.png" />'
+                resultado.innerHTML += "Você está com obesidade classe I, com imc:" + imc.toFixed(2)
+            }else if( imc >= 35 && imc <= 39.9){
+                texto.innerHTML = "IMC 35 - 39.9"
+                img.innerHTML = '<img src="assets/img/obesoII.png" />'
+                resultado.innerHTML += "Você está com obesidade classe II, com imc:" + imc.toFixed(2)
+            }else if ( imc >= 40){
+                texto.innerHTML = "IMC >= 40"
+                img.innerHTML = '<img src="assets/img/OBESOIII.png" />'
+                resultado.innerHTML += "Você está com obesidade classe III, com imc:" + imc.toFixed(2)
+            }
+        })
+        
+
+
+    </script>
+</body>
+</html>

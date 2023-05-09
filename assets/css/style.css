@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0px; padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    text-align: center;
+    font-size: 2vh;
+}
+
+body{
+    background-image: url(../img/pessoa-se-pesando-na-balanca-fita-metrica-no-chao-amp_hero-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resposta{
+    padding: 30px;
+    width: fit-content;
+}
+
+#peso, #altura{
+    box-shadow: rgba(0, 0, 0, 0.336) 1px 1px 1px 1px;
+    margin: 1vh;
+    padding: 0.7vh;
+    font-size: 1vh;
+    border-radius: 15px;
+}
+
+label, #resposta{
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: black;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#bnt{
+    padding: 1vh;
+    width: fit-content;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto ;
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
+#bnt:hover{
+    background-color: rgba(0, 0, 0, 0.377);
+    cursor: pointer;
+}
+
+#imc{
+    margin: 10px;
+}
+
+h1{
+    font-size: 4vh;
+}
